@@ -4,7 +4,7 @@ test('GET request', async ({request}) => {
 const response = await request.get('https://reqres.in/api/users/1',
 {
 headers: {
-'x-api-key': 'reqres_de47f7fa069f46e48159d183e78316d5'
+'x-api-key': process.env.REQRES_API_KEY!
 }
 });
 // response status code
@@ -28,7 +28,7 @@ test('POST request', async ({request}) => { const data = {
 const response = await request.post('https://reqres.in/api/users',
 {
 headers: {
-'x-api-key': 'reqres_de47f7fa069f46e48159d183e78316d5', 'Content-Type': 'application/json'
+'x-api-key': process.env.REQRES_API_KEY!, 'Content-Type': 'application/json'
 },
 data: data
 }
@@ -52,7 +52,7 @@ test('PUT request', async ({request}) => { const data = {
 const response = await request.put('https://reqres.in/api/users/2',
 {
 headers: {
-'x-api-key': 'reqres_de47f7fa069f46e48159d183e78316d5', 'Content-Type': 'application/json'
+'x-api-key': process.env.REQRES_API_KEY!, 'Content-Type': 'application/json'
 },
 data: data
 }
@@ -74,7 +74,7 @@ test('DELETE request', async ({request}) => {
 const response = await request.delete('https://reqres.in/api/users/2',
 {
 headers: {
-'x-api-key': 'reqres_de47f7fa069f46e48159d183e78316d5'
+'x-api-key': process.env.REQRES_API_KEY!
 }
 });
 // response status code

@@ -1,0 +1,19 @@
+# Installed dependencies and generated test output
+node_modules/
+test-results/
+playwright-report/
+blob-report/
+reports/
+allure-report*/
+allure-results*/
+Allure_Jenkins_results*/
+playwright/.cache/
+playwright/.auth/
+.playwright-mcp/
+
+# Local credentials and Git migration backups
+.env
+.env.*
+!.env.example
+!.env.sample
+.git-backups/

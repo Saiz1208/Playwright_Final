@@ -1,0 +1,18 @@
+{
+	"mcpServers": {
+		"playwright": {
+			"type": "local",
+			"command": "cmd.exe",
+			"args": [
+				"/d",
+				"/c",
+				"npx.cmd",
+				"-y",
+				"@playwright/mcp@latest"
+			],
+			"tools": [
+				"*"
+			]
+		}
+	}
+}
