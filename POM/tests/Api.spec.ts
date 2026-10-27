@@ -1,5 +1,6 @@
 //GET Request
 import {test, expect} from '@playwright/test'; 
+import * as process from 'node:process';
 function getApiKey(): string {
   const apiKey = process.env.REQRES_API_KEY?.trim();
   if (!apiKey || apiKey === 'your_reqres_api_key') {
