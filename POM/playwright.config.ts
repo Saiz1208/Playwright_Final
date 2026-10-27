@@ -1,12 +1,14 @@
 import { defineConfig, devices } from '@playwright/test';
+import { existsSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { loadEnvFile } from 'node:process';
 
-/**
- * Read environment variables from file.
- * https://github.com/motdotla/dotenv
- */
-// import dotenv from 'dotenv';
-// import path from 'path';
-// dotenv.config({ path: path.resolve(__dirname, '.env') });
+// Load local credentials regardless of the directory Playwright is started from.
+// Existing environment variables (for example CI secrets) take precedence.
+const envFile = resolve(__dirname, '.env');
+if (existsSync(envFile)) {
+  loadEnvFile(envFile);
+}
 
 /**
  * See https://playwright.dev/docs/test-configuration.
