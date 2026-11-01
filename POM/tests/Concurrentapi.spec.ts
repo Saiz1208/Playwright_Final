@@ -1,5 +1,13 @@
 import { test, expect } from '@playwright/test';
 
+function getApiKey(): string {
+  const apiKey = process.env.REQRES_API_KEY?.trim();
+  if (!apiKey || apiKey === 'your_reqres_api_key') {
+    throw new Error('Set REQRES_API_KEY in POM/.env or your environment before running API tests.');
+  }
+  return apiKey;
+}
+
 test('TC_REQ_GET_20_Series ', async ({ request }) => {
     //--Test Steps
     const totalrequest = 20;
@@ -7,7 +15,7 @@ test('TC_REQ_GET_20_Series ', async ({ request }) => {
     const responses = await Promise.all(
         Array.from({ length: totalrequest }, () => request.get("https://reqres.in/api/users/1", {
             headers: {
-                'x-api-key': 'reqres_de47f7fa069f46e48159d183e78316d5'
+                'x-api-key': getApiKey()
             }
         }))
     );

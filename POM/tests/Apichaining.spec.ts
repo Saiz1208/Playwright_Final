@@ -1,5 +1,13 @@
 import {test, expect} from '@playwright/test';
 
+function getApiKey(): string {
+  const apiKey = process.env.REQRES_API_KEY?.trim();
+  if (!apiKey || apiKey === 'your_reqres_api_key') {
+    throw new Error('Set REQRES_API_KEY in POM/.env or your environment before running API tests.');
+  }
+  return apiKey;
+}
+
 test('TC_REQ_Chaining',async({request})=>{
 //--Test Steps
 const response = await request.post("https://reqres.in/api/users",{ 
@@ -8,7 +16,7 @@ name: "suresh",
 job: "Trainer"
 },
 headers: {
-'x-api-key': 'reqres_de47f7fa069f46e48159d183e78316d5', 
+'x-api-key': getApiKey(), 
 'Content-Type' : 'application/json'
 } ,
 });
@@ -28,7 +36,7 @@ console.log("Extracted id is: "+id);
 const deleteResponse = await
 request.delete(`https://reqres.in/api/users/${id}`,{ 
 headers: {
-'x-api-key': 'reqres_de47f7fa069f46e48159d183e78316d5'
+'x-api-key': getApiKey()
 }
 });
 //get status code
