@@ -17,7 +17,7 @@ headers: {
 }
 });
 // response status code
-const statuscode = response.status();
+const statuscode =  response.status();
 console.log('Status Code:', statuscode);
 console.log("===============================");
 //Response body
@@ -30,14 +30,16 @@ expect(statuscode).toBe(200);
 
 //POST Request
 
-test('POST request', async ({request}) => { const data = {
+test('POST request', async ({request}) => { 
+  const data = {
 "name": "SureshIT",
 "Role": "Trainer"
 }
 const response = await request.post('https://reqres.in/api/users',
 {
 headers: {
-'x-api-key': getApiKey(), 'Content-Type': 'application/json'
+'x-api-key': getApiKey(), 
+'Content-Type': 'application/json'
 },
 data: data
 }
@@ -61,7 +63,8 @@ test('PUT request', async ({request}) => { const data = {
 const response = await request.put('https://reqres.in/api/users/2',
 {
 headers: {
-'x-api-key': getApiKey(), 'Content-Type': 'application/json'
+'x-api-key': getApiKey(), 
+'Content-Type': 'application/json'
 },
 data: data
 }
