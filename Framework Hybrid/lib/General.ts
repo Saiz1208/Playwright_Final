@@ -35,4 +35,25 @@ async closeApplication() {
     await this.page.close();
     console.log("Application closed");  
 }
+ // GET Request
+    async getREQ() {
+        return await this.request.get(this.getUrl, 
+            {
+            headers: this.headers
+            });
+    }
+    // POST Request
+    async postREQ() {
+        return await this.request.post(this.postUrl, {
+            headers: this.headers,
+            data: this.data
+        });
+    }
+    // DELETE Request
+    async deleteREQ() {
+
+        return await this.request.delete(this.deleteUrl, {
+            headers: this.headers
+        });
+    }
 }
