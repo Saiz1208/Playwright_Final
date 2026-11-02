@@ -1,0 +1,6 @@
+C:\Users\SATHISH KUMAR S\Documents\SQL Server Management Studio\Playwright\Playwright\bin\Debug\Playwright.dacpac
+C:\Users\SATHISH KUMAR S\Documents\SQL Server Management Studio\Playwright\Playwright\obj\Debug\Model.xml
+C:\Users\SATHISH KUMAR S\Documents\SQL Server Management Studio\Playwright\Playwright\obj\Debug\refactor.xml
+C:\Users\SATHISH KUMAR S\Documents\SQL Server Management Studio\Playwright\Playwright\obj\Debug\postdeploy.sql
+C:\Users\SATHISH KUMAR S\Documents\SQL Server Management Studio\Playwright\Playwright\obj\Debug\predeploy.sql
+C:\Users\SATHISH KUMAR S\Documents\SQL Server Management Studio\Playwright\Playwright\obj\Debug\preplan.sql

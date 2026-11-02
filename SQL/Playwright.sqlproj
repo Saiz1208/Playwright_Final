@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build">
+  <Sdk Name="Microsoft.Build.Sql" Version="2.3.0" />
+  <PropertyGroup>
+    <Name>Playwright</Name>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql160DatabaseSchemaProvider</DSP>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultCollation>Latin1_General_CI_AS</DefaultCollation>
+    <TargetDatabaseName>students</TargetDatabaseName>
+    <ProjectGuid>{1064B060-7D0E-4E26-99D4-2A63018CF7BE}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- Ad-hoc SSMS queries, not schema objects: keep them in the project but out of the build. -->
+    <Build Remove="Queries\**\*.sql" />
+    <None Include="Queries\**\*.sql" />
+    <!-- A project builds one database (students), so other databases' tables are listed but not built. -->
+    <Build Remove="Databases\master\**\*.sql" />
+    <None Include="Databases\master\**\*.sql" />
+  </ItemGroup>
+</Project>
