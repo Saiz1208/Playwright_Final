@@ -10,6 +10,8 @@ Allure_Jenkins_results*/
 playwright/.cache/
 playwright/.auth/
 .playwright-mcp/
+Test_Closure_Report*.xlsx
+Practice Typescript/Screenshots/
 
 # Local credentials and Git migration backups
 .env
