@@ -1,0 +1,6 @@
+{
+  "code-runner.saveFileBeforeRun": true,
+  "code-runner.executorMap": {
+    "typescript": "cd $dir && npx ts-node $fileName"
+  }
+}
